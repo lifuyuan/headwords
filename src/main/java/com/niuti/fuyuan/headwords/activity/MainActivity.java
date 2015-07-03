@@ -15,10 +15,10 @@ import com.niuti.fuyuan.headwords.fragment.FragmentController;
 import com.niuti.fuyuan.headwords.utils.ToastUtils;
 
 public class MainActivity extends FragmentActivity implements
-        OnCheckedChangeListener, OnClickListener {
+        OnCheckedChangeListener {
 
     private RadioGroup rg_tab;
-    private ImageView iv_add;
+    //private ImageView iv_add;
     private FragmentController controller;
 
     @Override
@@ -36,10 +36,8 @@ public class MainActivity extends FragmentActivity implements
 
     private void initView() {
         rg_tab = (RadioGroup) findViewById(R.id.rg_tab);
-        iv_add = (ImageView) findViewById(R.id.iv_add);
 
         rg_tab.setOnCheckedChangeListener(this);
-        iv_add.setOnClickListener(this);
     }
 
     @Override
@@ -51,26 +49,36 @@ public class MainActivity extends FragmentActivity implements
             case R.id.rb_meassage:
                 controller.showFragment(1);
                 break;
-            case R.id.rb_search:
+            case R.id.rb_user:
                 controller.showFragment(2);
                 break;
-            case R.id.rb_user:
-                controller.showFragment(3);
+            default:
                 break;
+        }
+    }
+/*
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            //case R.id.iv_add:
+            //    ToastUtils.showToast(this, "add", Toast.LENGTH_SHORT);
+            //    break;
+
             default:
                 break;
         }
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.iv_add:
-                ToastUtils.showToast(this, "add", Toast.LENGTH_SHORT);
-                break;
-
-            default:
-                break;
-        }
+    public void onBackPressed() {
+        super.onBackPressed();
+        //this.finish();
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
+        super.onSaveInstanceState(outState);
+    };
+*/
 }

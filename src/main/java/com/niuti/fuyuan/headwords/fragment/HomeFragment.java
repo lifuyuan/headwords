@@ -23,15 +23,7 @@ public class HomeFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_home, null);
 		
-		new TitleBuilder(view)
-			.setTitleText("首页")
-			.setLeftText("LEFT")
-			.setLeftOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ToastUtils.showToast(activity, "left onclick", Toast.LENGTH_SHORT);
-				}
-			});
+		new TitleBuilder(view).setTitleText("首字母");
 		
 		return view;
 	}

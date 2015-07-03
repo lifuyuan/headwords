@@ -10,7 +10,7 @@ import com.niuti.fuyuan.headwords.constants.CommonConstants;
 public class Logger {
 
     /**
-     * 显示LOG(默认info级别)
+     * 鏄剧ずLOG(榛樿info绾у埆)
      *
      * @param TAG
      * @param msg
@@ -23,7 +23,7 @@ public class Logger {
     }
 
     /**
-     * 显示LOG
+     * 鏄剧ずLOG
      *
      * @param TAG
      * @param msg

@@ -11,7 +11,7 @@ public class ToastUtils {
     private static Toast mToast;
 
     /**
-     * ÏÔÊ¾Toast
+     * æ˜¾ç¤ºToast
      */
     public static void showToast(Context context, CharSequence text, int duration) {
         if(mToast == null) {

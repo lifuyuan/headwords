@@ -33,7 +33,6 @@ public class FragmentController {
 		fragments = new ArrayList<Fragment>();
 		fragments.add(new HomeFragment());
 		fragments.add(new MessageFragment());
-		fragments.add(new SearchFragment());
 		fragments.add(new UserFragment());
 		
 		FragmentTransaction ft = fm.beginTransaction();

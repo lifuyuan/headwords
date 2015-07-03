@@ -21,7 +21,7 @@ public class BaseApplication extends Application {
         initImageLoader(this);
     }
 
-    // ³õÊ¼»¯Í¼Æ¬´¦Àí
+    // åˆå§‹åŒ–å›¾ç‰‡å¤„ç†
     private void initImageLoader(Context context) {
         // This configuration tuning is custom. You can tune every option, you
         // may tune some of them,

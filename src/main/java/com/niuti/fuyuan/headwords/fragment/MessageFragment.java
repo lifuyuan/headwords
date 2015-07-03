@@ -22,15 +22,7 @@ public class MessageFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_message, null);
 		
-		new TitleBuilder(view)
-			.setTitleText("Message")
-			.setRightImage(R.mipmap.ic_launcher)
-			.setRightOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ToastUtils.showToast(activity, "right click~", Toast.LENGTH_SHORT);
-				}
-			});
+		new TitleBuilder(view).setTitleText("首字母");
 		
 		return view;
 	}
