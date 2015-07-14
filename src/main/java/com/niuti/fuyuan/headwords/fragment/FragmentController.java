@@ -48,6 +48,7 @@ public class FragmentController {
 		FragmentTransaction ft = fm.beginTransaction();
 		ft.show(fragment);
 		ft.commit();
+
 	}
 	
 	public void hideFragments() {
@@ -58,6 +59,7 @@ public class FragmentController {
 			}
 		}
 		ft.commit();
+
 	}
 	
 	public Fragment getFragment(int position) {
