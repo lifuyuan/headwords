@@ -6,15 +6,11 @@
     android:orientation="vertical" >
 
     <include layout="@layout/include_titlebar"/>
-    
-    <TextView 
-        style="@style/TextViewSubhead"
-        android:text="首页"
-        />
 
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/bg_dark" />
 
 </LinearLayout>
