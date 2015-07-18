@@ -7,6 +7,7 @@ import android.os.Message;
 import com.niuti.fuyuan.headwords.BaseActivity;
 import com.niuti.fuyuan.headwords.Config;
 import com.niuti.fuyuan.headwords.R;
+import com.niuti.fuyuan.headwords.application.MyApplication;
 
 /**
  * Created by fuyuan on 2015/7/2.
@@ -41,7 +42,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        MyApplication.getInstance().addActivity(this);
         setContentView(R.layout.activity_splash);
 
         String token = Config.getCachedToken(this);

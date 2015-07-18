@@ -11,6 +11,7 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.Toast;
 
 import com.niuti.fuyuan.headwords.R;
+import com.niuti.fuyuan.headwords.application.MyApplication;
 import com.niuti.fuyuan.headwords.fragment.FragmentController;
 import com.niuti.fuyuan.headwords.utils.ToastUtils;
 
@@ -24,7 +25,7 @@ public class MainActivity extends FragmentActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        MyApplication.getInstance().addActivity(this);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -70,15 +71,16 @@ public class MainActivity extends FragmentActivity implements
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        //this.finish();
-    }
-
-    @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
         super.onSaveInstanceState(outState);
     };
 */
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //this.finish();
+        MyApplication.getInstance().exit();
+    }
+
 }
