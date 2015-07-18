@@ -13,11 +13,12 @@ import android.widget.Toast;
 import com.niuti.fuyuan.headwords.R;
 import com.niuti.fuyuan.headwords.application.MyApplication;
 import com.niuti.fuyuan.headwords.fragment.FragmentController;
+import com.niuti.fuyuan.headwords.utils.Logger;
 import com.niuti.fuyuan.headwords.utils.ToastUtils;
 
 public class MainActivity extends FragmentActivity implements
         OnCheckedChangeListener {
-
+    protected String TAG;
     private RadioGroup rg_tab;
     //private ImageView iv_add;
     private FragmentController controller;
@@ -81,6 +82,30 @@ public class MainActivity extends FragmentActivity implements
         super.onBackPressed();
         //this.finish();
         MyApplication.getInstance().exit();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Logger.show(TAG, "onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Logger.show(TAG, "onStop");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Logger.show(TAG, "onResume");
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        Logger.show(TAG, "onRestart");
     }
 
 }

@@ -5,28 +5,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.niuti.fuyuan.headwords.BaseFragment;
 import com.niuti.fuyuan.headwords.R;
+import com.niuti.fuyuan.headwords.SignBaseFragment;
 import com.niuti.fuyuan.headwords.utils.Logger;
 import com.niuti.fuyuan.headwords.utils.TitleBuilder;
 
-public class HomeFragment extends BaseFragment {
+public class SignupFragment extends SignBaseFragment {
 	protected String TAG;
 	private View view;
-	private WebView webView;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		view = View.inflate(activity, R.layout.frag_home, null);
+		view = View.inflate(activity, R.layout.frag_signup, null);
 		view.setBackgroundColor(Color.parseColor("#2E2E2E"));
 		new TitleBuilder(view).setTitleText("首字母");
-
-		webView = (WebView)view.findViewById(R.id.webView);
 
 		return view;
 	}
@@ -53,14 +48,6 @@ public class HomeFragment extends BaseFragment {
 	public void onStart() {
 		super.onStart();
 		Logger.show(TAG, "Fragment onStart");
-		webView.loadUrl("http://121.40.201.41/android/learnings/new_learning?token=XmK7EHDvzCy_PTKc8TrG");
-		webView.setWebViewClient(new WebViewClient());
-		webView.setBackgroundColor(Color.parseColor("#2E2E2E"));
-		WebSettings webSettings = webView.getSettings();
-		webSettings.setJavaScriptEnabled(true);
-		webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-		webSettings.setSupportZoom(false);
-		webSettings.setBuiltInZoomControls(false);
 	}
 
 	

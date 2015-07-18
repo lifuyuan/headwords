@@ -1,0 +1,30 @@
+package com.niuti.fuyuan.headwords;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+
+import com.niuti.fuyuan.headwords.activity.LoginActivity;
+import com.niuti.fuyuan.headwords.activity.MainActivity;
+
+
+/**
+ * Created by fuyuan on 2015/6/30.
+ */
+public class SignBaseFragment extends Fragment {
+
+    protected LoginActivity activity;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        activity = (LoginActivity) getActivity();
+    }
+
+    protected void intent2Activity(Class<? extends Activity> tarActivity) {
+        Intent intent = new Intent(activity, tarActivity);
+        startActivity(intent);
+    }
+}
