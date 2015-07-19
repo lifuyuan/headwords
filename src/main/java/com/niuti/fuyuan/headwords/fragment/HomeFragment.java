@@ -31,6 +31,12 @@ public class HomeFragment extends BaseFragment {
 		webView.loadUrl("http://121.40.201.41/android/learnings/new_learning?token=XmK7EHDvzCy_PTKc8TrG");
 		webView.setWebViewClient(new MyWebViewClient());
 		webView.setBackgroundColor(Color.parseColor("#2E2E2E"));
+		webView.setOnLongClickListener(new View.OnLongClickListener(){
+			@Override
+			public boolean onLongClick(View v) {
+				return true;
+			}
+		});
 		WebSettings webSettings = webView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);

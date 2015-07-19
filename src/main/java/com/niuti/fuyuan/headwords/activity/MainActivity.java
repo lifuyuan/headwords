@@ -1,21 +1,17 @@
 package com.niuti.fuyuan.headwords.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
-import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.Toast;
 
 import com.niuti.fuyuan.headwords.R;
 import com.niuti.fuyuan.headwords.application.MyApplication;
 import com.niuti.fuyuan.headwords.fragment.FragmentController;
 import com.niuti.fuyuan.headwords.utils.Logger;
-import com.niuti.fuyuan.headwords.utils.ToastUtils;
 
 public class MainActivity extends FragmentActivity implements
         OnCheckedChangeListener {
@@ -80,9 +76,24 @@ public class MainActivity extends FragmentActivity implements
 */
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        //this.finish();
-        MyApplication.getInstance().exit();
+        //super.onBackPressed();
+        //MyApplication.getInstance().exit();
+        new AlertDialog.Builder(this).setTitle("确认退出吗？")
+                //.setIcon(android.R.drawable.ic_dialog_info)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 点击“确认”后的操作
+                        MainActivity.super.onBackPressed();
+                        MyApplication.getInstance().exit();
+                    }
+                })
+                .setNegativeButton("返回", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 点击“返回”后的操作,这里不设置没有任何操作
+                    }
+                }).show();
     }
 
     @Override
