@@ -43,7 +43,7 @@ public class SigninFragment extends SignBaseFragment {
 			public void onClick(View arg0) {
 
 				if (TextUtils.isEmpty(username.getText())) {
-					ToastUtils.showToast(activity, "用户名不能为空", Toast.LENGTH_SHORT);
+					ToastUtils.showToast(activity, "昵称不能为空", Toast.LENGTH_SHORT);
 					return;
 				}
 
@@ -76,7 +76,7 @@ public class SigninFragment extends SignBaseFragment {
 					@Override
 					public void onFail() {
 						pd.dismiss();
-						ToastUtils.showToast(view.getContext(), "登录失败", Toast.LENGTH_SHORT);
+						ToastUtils.showToast(activity, "登录失败", Toast.LENGTH_SHORT);
 					}
 				});
 

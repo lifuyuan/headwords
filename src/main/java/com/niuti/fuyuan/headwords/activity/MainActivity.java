@@ -79,21 +79,21 @@ public class MainActivity extends FragmentActivity implements
         //super.onBackPressed();
         //MyApplication.getInstance().exit();
         new AlertDialog.Builder(this).setTitle("确认退出吗？")
-                //.setIcon(android.R.drawable.ic_dialog_info)
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // 点击“确认”后的操作
-                        MainActivity.super.onBackPressed();
-                        MyApplication.getInstance().exit();
-                    }
-                })
-                .setNegativeButton("返回", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // 点击“返回”后的操作,这里不设置没有任何操作
-                    }
-                }).show();
+            //.setIcon(android.R.drawable.ic_dialog_info)
+            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // 点击“确认”后的操作
+                    MainActivity.super.onBackPressed();
+                    MyApplication.getInstance().exit();
+                }
+            })
+            .setNegativeButton("返回", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // 点击“返回”后的操作,这里不设置没有任何操作
+                }
+            }).show();
     }
 
     @Override

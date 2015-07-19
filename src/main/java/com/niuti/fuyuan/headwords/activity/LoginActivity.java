@@ -1,5 +1,7 @@
 package com.niuti.fuyuan.headwords.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -56,7 +58,23 @@ public class LoginActivity extends FragmentActivity implements
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        MyApplication.getInstance().exit();
+        //super.onBackPressed();
+        //MyApplication.getInstance().exit();
+        new AlertDialog.Builder(this).setTitle("确认退出吗？")
+            //.setIcon(android.R.drawable.ic_dialog_info)
+            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // 点击“确认”后的操作
+                    LoginActivity.super.onBackPressed();
+                    MyApplication.getInstance().exit();
+                }
+            })
+            .setNegativeButton("返回", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // 点击“返回”后的操作,这里不设置没有任何操作
+                }
+            }).show();
     }
 }

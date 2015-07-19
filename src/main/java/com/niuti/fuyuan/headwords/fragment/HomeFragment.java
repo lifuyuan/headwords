@@ -11,6 +11,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.niuti.fuyuan.headwords.BaseFragment;
+import com.niuti.fuyuan.headwords.Config;
 import com.niuti.fuyuan.headwords.R;
 import com.niuti.fuyuan.headwords.library.MyWebViewClient;
 import com.niuti.fuyuan.headwords.utils.Logger;
@@ -28,7 +29,7 @@ public class HomeFragment extends BaseFragment {
 		view.setBackgroundColor(Color.parseColor("#2E2E2E"));
 		new TitleBuilder(view).setTitleText("首字母");
 		webView = (WebView)view.findViewById(R.id.webView);
-		webView.loadUrl("http://121.40.201.41/android/learnings/new_learning?token=XmK7EHDvzCy_PTKc8TrG");
+		webView.loadUrl(Config.HOME_URL+"?token="+Config.getCachedToken(activity));
 		webView.setWebViewClient(new MyWebViewClient());
 		webView.setBackgroundColor(Color.parseColor("#2E2E2E"));
 		webView.setOnLongClickListener(new View.OnLongClickListener(){

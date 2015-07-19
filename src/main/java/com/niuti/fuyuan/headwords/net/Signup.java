@@ -10,9 +10,9 @@ import org.json.JSONObject;
 /**
  * Created by fuyuan on 2015/7/19.
  */
-public class Login {
-    public Login(String username,String password,final SuccessCallback successCallback,final FailCallback failCallback) {
-        new NetConnection(Config.LOGIN_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
+public class Signup {
+    public Signup(String username, String password, String password_confirm, String grade, final SuccessCallback successCallback, final FailCallback failCallback) {
+        new NetConnection(Config.SIGNUP_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
 
             @Override
             public void onSuccess(String result) {
@@ -44,7 +44,7 @@ public class Login {
                     failCallback.onFail();
                 }
             }
-        }, "user[name]",username,"user[password]",password);
+        }, "user[name]",username,"user[password]",password, "user[password_confirmation]",password_confirm,"user[grade]", grade);
     }
 
     public static interface SuccessCallback{

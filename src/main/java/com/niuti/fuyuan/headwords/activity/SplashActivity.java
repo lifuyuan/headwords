@@ -15,7 +15,7 @@ import com.niuti.fuyuan.headwords.application.MyApplication;
 public class SplashActivity extends BaseActivity {
     private static final int WHAT_INTENT2LOGIN = 1;
     private static final int WHAT_INTENT2MAIN = 2;
-    private static final long SPLASH_DUR_TIME = 1000;
+    private static final long SPLASH_DUR_TIME = 5000;
 
     private Handler handler = new Handler() {
 
@@ -46,7 +46,7 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
 
         String token = Config.getCachedToken(this);
-        if(token!=null) {
+        if(token!=null && !token.equals("")) {
             handler.sendEmptyMessageDelayed(WHAT_INTENT2MAIN, SPLASH_DUR_TIME);
         } else {
             handler.sendEmptyMessageDelayed(WHAT_INTENT2LOGIN, SPLASH_DUR_TIME);
