@@ -7,5 +7,7 @@
     <dimen name="txtsize_body">14sp</dimen>
     <dimen name="txtsize_caption">12sp</dimen>
     <dimen name="horizontal_1dp">1dp</dimen>
+    <dimen name="padding_top_50dp">50dp</dimen>
+    <dimen name="padding_bottom_50dp">50dp</dimen>
 
 </resources>

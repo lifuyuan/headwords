@@ -4,5 +4,8 @@
     <string name="app_name">首字母</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="login_title">初中英语   每日一篇</string>
+    <string name="login">开始挑战</string>
+    <string name="username">昵称</string>
+    <string name="password">密码</string>
 </resources>

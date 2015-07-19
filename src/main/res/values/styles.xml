@@ -46,6 +46,10 @@
         <item name="android:textSize">@dimen/txtsize_caption</item>
     </style>
 
+    <style name="my_edittext_style">
+        <item name="android:background">@drawable/bg_edittext</item>
+    </style>
+
     <style name="ListViewCommon">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
