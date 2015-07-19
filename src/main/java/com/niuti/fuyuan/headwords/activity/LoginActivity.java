@@ -23,7 +23,7 @@ public class LoginActivity extends FragmentActivity implements
     private SignFragmentController controller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Config.cacheToken(this, "111");
+        Config.cacheToken(this, "111");
         super.onCreate(savedInstanceState);
         MyApplication.getInstance().addActivity(this);
         setContentView(R.layout.activity_login);
