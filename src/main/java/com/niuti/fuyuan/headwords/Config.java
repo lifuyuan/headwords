@@ -12,6 +12,7 @@ public class Config {
     public static final String APP_ID = "com.niuti.fuyuan.headwords";
     public static final String CHARSET = "utf-8";
     public static final String HOME_URL = "http://121.40.201.41/android/learnings/new_learning";
+    public static final String USER_URL = "http://121.40.201.41/android/learnings/learning_info";
     public static final String LOGIN_URL = "http://121.40.201.41/api/users/sign_in.json";
     public static final String SIGNUP_URL = "http://121.40.201.41/api/users/sign_up.json";
 
