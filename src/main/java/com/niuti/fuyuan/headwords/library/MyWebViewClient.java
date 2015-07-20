@@ -14,7 +14,7 @@ import com.niuti.fuyuan.headwords.utils.ToastUtils;
  */
 public class MyWebViewClient extends WebViewClient{
     protected String TAG;
-    private ProgressDialog prDialog;
+
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         Logger.show(TAG, "-MyWebViewClient->shouldOverrideUrlLoading()--");
@@ -25,15 +25,8 @@ public class MyWebViewClient extends WebViewClient{
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         Logger.show(TAG, "-MyWebViewClient->onPageStarted()--");
-        prDialog = ProgressDialog.show(view.getContext(), null, "loading, please wait...");
+        //prDialog = ProgressDialog.show(view.getContext(), null, "loading, please wait...");
         super.onPageStarted(view, url, favicon);
-    }
-
-    @Override
-    public void onPageFinished(WebView view, String url) {
-        Logger.show(TAG, "-MyWebViewClient->onPageFinished()--");
-        prDialog.dismiss();
-        super.onPageFinished(view, url);
     }
 
 

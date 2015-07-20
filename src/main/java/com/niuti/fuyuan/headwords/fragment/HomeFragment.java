@@ -1,5 +1,6 @@
 package com.niuti.fuyuan.headwords.fragment;
 
+import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,7 +31,15 @@ public class HomeFragment extends BaseFragment {
 		new TitleBuilder(view).setTitleText("首字母");
 		webView = (WebView)view.findViewById(R.id.webView);
 		webView.loadUrl(Config.HOME_URL+"?token="+Config.getCachedToken(activity));
-		webView.setWebViewClient(new MyWebViewClient());
+		final ProgressDialog prDialog = ProgressDialog.show(activity, null, "loading, please wait...");
+		webView.setWebViewClient(new MyWebViewClient(){
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				Logger.show(TAG, "-MyWebViewClient->onPageFinished()--");
+				prDialog.dismiss();
+				super.onPageFinished(view, url);
+			}
+		});
 		webView.setBackgroundColor(Color.parseColor("#2E2E2E"));
 		webView.setOnLongClickListener(new View.OnLongClickListener(){
 			@Override
