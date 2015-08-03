@@ -19,7 +19,7 @@
     <color name="txt_gray">#404040</color>
     <color name="txt_lime">#9ce159</color>
     <color name="txt_alizarin">#e74d3d</color>
-    <color name="txt_white">#ecf0f1</color>
+    <color name="txt_white">#FFFFFF</color>
     <color name="txt_emerald">#B5E61D</color>
     <color name="txt_light_gray">#898989</color>
 
@@ -29,7 +29,7 @@
     <color name="bg_dark">#2E2E2E</color>
     <color name="bg_agray">#49dddddd</color>
     <color name="bg_gray_pressed">#e8e8e8</color>
-    <color name="bg_white">#ecf0f1</color>
+    <color name="bg_white">#FFFFFF</color>
     <color name="txt_at_blue">#507daf</color>
     <color name="bg_gray_bar">#f9f9f9</color>
     <color name="divider_gray">#d7d7d7</color>

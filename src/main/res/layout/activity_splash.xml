@@ -1,46 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_dark"
-    android:orientation="vertical">
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+    >
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/welcome_android_slogan" />
+</RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:layout_marginTop="500dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/slogan1"
-            android:textColor="@color/txt_emerald"
-            android:paddingTop="@dimen/padding_top_200dp"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="@string/company"
+            android:textColor="@color/txt_alizarin"
+            android:layout_marginBottom="20dp"
+            android:textSize="12sp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/slogan2"
-            android:textColor="@color/txt_emerald"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/slogan3"
-            android:textColor="@color/txt_light_gray"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
-
 </LinearLayout>

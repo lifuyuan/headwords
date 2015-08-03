@@ -11,7 +11,8 @@
     <string name="password_confirm">确认密码</string>
     <string name="grade_name">年级</string>
     <string name="logout">注销当前用户</string>
-    <string name="slogan1">A passage a day</string>
+    <string name="slogan1">首字母</string>
     <string name="slogan2">Keeps the teacher away.</string>
     <string name="slogan3">日读一文  无师自通</string>
+    <string name="company">喜点科技</string>
 </resources>
