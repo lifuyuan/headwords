@@ -29,7 +29,7 @@ public class MessageFragment extends BaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_message, null);
-		view.setBackgroundColor(Color.parseColor("#2E2E2E"));
+		view.setBackgroundColor(Color.parseColor("#404040"));
 		new TitleBuilder(view).setTitleText("首字母");
 		webView = (WebView)view.findViewById(R.id.webView);
 		return view;
@@ -49,7 +49,7 @@ public class MessageFragment extends BaseFragment {
 				super.onPageFinished(view, url);
 			}
 		});
-		webView.setBackgroundColor(Color.parseColor("#2E2E2E"));
+		webView.setBackgroundColor(Color.parseColor("#404040"));
 		webView.setOnLongClickListener(new View.OnLongClickListener(){
 			@Override
 			public boolean onLongClick(View v) {

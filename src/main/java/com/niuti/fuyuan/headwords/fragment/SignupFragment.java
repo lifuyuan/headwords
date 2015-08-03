@@ -39,7 +39,7 @@ public class SignupFragment extends SignBaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_signup, null);
-		view.setBackgroundColor(Color.parseColor("#2E2E2E"));
+		view.setBackgroundColor(Color.parseColor("#404040"));
 		new TitleBuilder(view).setTitleText("首字母");
 		username = (EditText)view.findViewById(R.id.username);
 		password = (EditText)view.findViewById(R.id.password);
