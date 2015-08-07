@@ -33,8 +33,8 @@ public class SigninFragment extends SignBaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_signin, null);
-		view.setBackgroundColor(Color.parseColor("#404040"));
-		new TitleBuilder(view).setTitleText("首字母");
+		view.setBackgroundColor(Color.parseColor("#FFFFFF"));
+		new TitleBuilder(view).setTitleText("手机号登录");
         username = (EditText)view.findViewById(R.id.username);
 		password = (EditText)view.findViewById(R.id.password);
 		view.findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
@@ -43,7 +43,7 @@ public class SigninFragment extends SignBaseFragment {
 			public void onClick(View arg0) {
 
 				if (TextUtils.isEmpty(username.getText())) {
-					ToastUtils.showToast(activity, "昵称不能为空", Toast.LENGTH_SHORT);
+					ToastUtils.showToast(activity, "手机号不能为空", Toast.LENGTH_SHORT);
 					return;
 				}
 

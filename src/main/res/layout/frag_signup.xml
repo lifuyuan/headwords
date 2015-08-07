@@ -7,120 +7,252 @@
 
     <include layout="@layout/include_titlebar"/>
 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#2c3e50"
+            android:text="@string/phone"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:hint="@string/username"
+            android:textColor="@color/bg_gray_dark"
+            android:textColorHint="@color/bg_gray_dark"
+            style="@style/my_edittext_style"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passwd"
+            android:textColor="#2c3e50"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="@string/password"
+            android:textColor="@color/bg_gray_dark"
+            android:textColorHint="@color/bg_gray_dark"
+            style="@style/my_edittext_style"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passwd_confirm"
+            android:textColor="#2c3e50"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/password_confirm"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="@string/password_confirm"
+            android:textColor="@color/bg_gray_dark"
+            android:textColorHint="@color/bg_gray_dark"
+            style="@style/my_edittext_style"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valicode"
+            android:textColor="#2c3e50"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/code"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:hint="@string/fillcode"
+            android:textColor="@color/bg_gray_dark"
+            android:textColorHint="@color/bg_gray_dark"
+            style="@style/my_edittext_style"
+            android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right" >
+        <Button
+            android:id="@+id/getCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/bg_lime"
+            android:textColor="@color/txt_white"
+            android:textSize="12sp"
+            android:text="@string/getcode" />
+            </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grade_name"
+            android:textColor="#2c3e50"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp" />
+
+        <ToggleButton android:id="@+id/toggle6"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/bg_gray_dark"
+                      android:textOff="六年级"
+                      android:textOn="六年级"
+                      android:text="六年级"
+                      android:checked="false"
+            />
+        <ToggleButton android:id="@+id/toggle7"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/bg_gray_dark"
+                      android:textOff="七年级"
+                      android:textOn="七年级"
+                      android:text="七年级"
+                      android:checked="false"
+            />
+        <ToggleButton android:id="@+id/toggle8"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/bg_gray_dark"
+                      android:textOff="八年级"
+                      android:textOn="八年级"
+                      android:text="八年级"
+                      android:checked="false"
+            />
+        <ToggleButton android:id="@+id/toggle9"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/bg_gray_dark"
+                      android:textOff="九年级"
+                      android:textOn="九年级"
+                      android:text="九年级"
+                      android:checked="false"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login_title"
-            android:textColor="@color/txt_white"
-            android:paddingTop="@dimen/padding_top_50dp"
-            android:paddingBottom="@dimen/padding_bottom_50dp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="首字母不会泄露你的手机号码，不会收取任何费用"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#2c3e50"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:paddingLeft="3dp"
-            android:inputType="text"
-            android:singleLine="true"
-            android:hint="@string/username"
-            android:textColor="@color/orange_dark"
-            android:textColorHint="@color/txt_at_blue"
-            style="@style/my_edittext_style"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:paddingLeft="3dp"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:hint="@string/password"
-            android:textColor="@color/orange_dark"
-            android:textColorHint="@color/txt_at_blue"
-            style="@style/my_edittext_style"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <EditText
-            android:id="@+id/password_confirm"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:paddingLeft="3dp"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:hint="@string/password_confirm"
-            android:textColor="@color/orange_dark"
-            android:textColorHint="@color/txt_at_blue"
-            style="@style/my_edittext_style"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <Spinner android:id="@+id/grade"
-                 android:layout_width="200dp"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="10dp"
-                 android:paddingTop="7dp"
-                 android:paddingBottom="7dp"
-                 android:paddingLeft="3dp"
-                 style="@style/my_edittext_style"
-                 >
-        </Spinner>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
-            android:background="@color/txt_emerald"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="#7f8c8d"
             android:textColor="@color/txt_white"
-            android:text="@string/login" />
+            android:textSize="12sp"
+            android:text="@string/signup" />
     </LinearLayout>
 </LinearLayout>

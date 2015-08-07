@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="@color/bg_dark"
+              android:background="@color/bg_white"
               android:orientation="vertical" >
 
     <FrameLayout
@@ -14,7 +14,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/bg_dark" />
+        android:background="@color/bg_white" />
 
     <RadioGroup
         android:id="@+id/rg_sign_tab"
