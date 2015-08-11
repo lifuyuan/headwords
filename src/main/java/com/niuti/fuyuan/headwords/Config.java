@@ -19,6 +19,7 @@ public class Config {
     public static final String LOGIN_URL = "http://121.40.201.41:5000/api/users/sign_in.json";
     public static final String SIGNUP_URL = "http://121.40.201.41:5000/api/users/sign_up.json";
     public static final String GETCODE_URL = "http://121.40.201.41:5000/api/users/code.json";
+    public static final String TOKEN_URL = "http://121.40.201.41:5000/api/users/tokenverify.json";
     public static String getCachedToken(Context context) {
         return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).getString(KEY_TOKEN, null);
     }

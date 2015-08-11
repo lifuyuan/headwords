@@ -3,11 +3,14 @@ package com.niuti.fuyuan.headwords.activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.Toast;
 
 import com.niuti.fuyuan.headwords.BaseActivity;
 import com.niuti.fuyuan.headwords.Config;
 import com.niuti.fuyuan.headwords.R;
 import com.niuti.fuyuan.headwords.application.MyApplication;
+import com.niuti.fuyuan.headwords.net.TokenVerify;
+import com.niuti.fuyuan.headwords.utils.ToastUtils;
 
 /**
  * Created by fuyuan on 2015/7/2.
@@ -47,7 +50,18 @@ public class SplashActivity extends BaseActivity {
 
         String token = Config.getCachedToken(this);
         if(token!=null && !token.equals("")) {
-            handler.sendEmptyMessageDelayed(WHAT_INTENT2MAIN, SPLASH_DUR_TIME);
+            new TokenVerify(token, new TokenVerify.SuccessCallback() {
+                @Override
+                public void onSuccess(String result) {
+                    handler.sendEmptyMessageDelayed(WHAT_INTENT2MAIN, SPLASH_DUR_TIME);
+                }
+            }, new TokenVerify.FailCallback() {
+                @Override
+                public void onFail() {
+                    ToastUtils.showToast(SplashActivity.this, "令牌过期，请您重新登录！", Toast.LENGTH_SHORT);
+                    handler.sendEmptyMessageDelayed(WHAT_INTENT2LOGIN, SPLASH_DUR_TIME);
+                }
+            });
         } else {
             handler.sendEmptyMessageDelayed(WHAT_INTENT2LOGIN, SPLASH_DUR_TIME);
         }
