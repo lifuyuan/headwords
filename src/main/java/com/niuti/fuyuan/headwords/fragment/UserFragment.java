@@ -31,14 +31,14 @@ public class UserFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_user, null);
 		new TitleBuilder(view).setTitleText("设置");
-		view.findViewById(R.id.btnLogout).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Config.cacheToken(activity, "");
-				ToastUtils.showToast(activity, "注销成功", Toast.LENGTH_SHORT);
-				MyApplication.getInstance().exit();
-			}
-		});
+		//view.findViewById(R.id.btnLogout).setOnClickListener(new View.OnClickListener() {
+		//	@Override
+		//	public void onClick(View v) {
+		//		Config.cacheToken(activity, "");
+		//		ToastUtils.showToast(activity, "注销成功", Toast.LENGTH_SHORT);
+		//		MyApplication.getInstance().exit();
+		//	}
+		//});
 		webView = (WebView)view.findViewById(R.id.webView);
 		return view;
 	}
@@ -55,6 +55,19 @@ public class UserFragment extends BaseFragment {
 				Logger.show(TAG, "-MyWebViewClient->onPageFinished()--");
 				prDialog.dismiss();
 				super.onPageFinished(view, url);
+			}
+
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				Logger.show(TAG, "-MyWebViewClient->shouldOverrideUrlLoading()--");
+				Logger.show(TAG, "-MyWebViewClient->shouldOverrideUrlLoading()--" + url);
+                if(url.endsWith("/android/quit")) {
+					Config.cacheToken(activity, "");
+					ToastUtils.showToast(activity, "注销成功", Toast.LENGTH_SHORT);
+					MyApplication.getInstance().exit();
+				}
+				//view.loadUrl(url);
+				return true;
 			}
 		});
 		webView.setBackgroundColor(Color.parseColor("#404040"));

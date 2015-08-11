@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark"
+    android:background="@color/bg_white"
     android:orientation="vertical" >
 
     <include layout="@layout/include_titlebar"/>
@@ -11,16 +11,26 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:textColor="#2c3e50"
             android:text="@string/phone"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:autoText="false"
+            android:focusable="false"
+            android:singleLine="false"
+            android:width="80dp"
+            android:maxWidth="80dp"
+            android:gravity="center_vertical|right"
+            />
         <EditText
             android:id="@+id/username"
             android:layout_height="wrap_content"
@@ -32,29 +42,36 @@
             android:textColor="@color/bg_gray_dark"
             android:textColorHint="@color/bg_gray_dark"
             style="@style/my_edittext_style"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+        <View android:layout_height="1dp" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/passwd"
             android:textColor="#2c3e50"
             android:layout_marginLeft="10dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:gravity="center_vertical|right"
+            android:width="80dp"
+            android:maxWidth="80dp"/>
         <EditText
             android:id="@+id/password"
             android:layout_height="wrap_content"
@@ -66,29 +83,35 @@
             android:textColor="@color/bg_gray_dark"
             android:textColorHint="@color/bg_gray_dark"
             style="@style/my_edittext_style"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+        <View android:layout_height="1dp" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/passwd_confirm"
             android:textColor="#2c3e50"
-            android:layout_marginLeft="10dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:gravity="center_vertical|right"
+            android:maxWidth="80dp"
+            android:width="80dp"
+            android:layout_marginLeft="10dp"/>
         <EditText
             android:id="@+id/password_confirm"
             android:layout_height="wrap_content"
@@ -107,34 +130,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+        <View android:layout_height="1dp" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/valicode"
             android:textColor="#2c3e50"
             android:layout_marginLeft="10dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:gravity="center_vertical|right"
+            android:width="80dp"/>
         <EditText
             android:id="@+id/code"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_marginLeft="10dp"
-            android:inputType="text"
             android:singleLine="true"
             android:hint="@string/fillcode"
             android:textColor="@color/bg_gray_dark"
             android:textColorHint="@color/bg_gray_dark"
             style="@style/my_edittext_style"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:inputType="number"/>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -150,7 +177,8 @@
             android:background="@color/bg_lime"
             android:textColor="@color/txt_white"
             android:textSize="12sp"
-            android:text="@string/getcode" />
+            android:text="@string/getcode"
+            android:height="40dp"/>
             </LinearLayout>
     </LinearLayout>
 
@@ -158,22 +186,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+        <View android:layout_height="1dp" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:minHeight="45dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/grade_name"
             android:textColor="#2c3e50"
             android:layout_marginLeft="10dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:gravity="center_vertical|right"
+            android:width="80dp"
+            android:maxWidth="80dp"
+            />
 
         <ToggleButton android:id="@+id/toggle6"
                       android:layout_width="wrap_content"
@@ -183,7 +217,10 @@
                       android:textOn="六年级"
                       android:text="六年级"
                       android:checked="false"
-            />
+                      android:layout_marginLeft="10dp"
+                      android:layout_weight="1"
+                      android:height="45dp"
+                      android:layout_marginTop="1dp"/>
         <ToggleButton android:id="@+id/toggle7"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -192,7 +229,10 @@
                       android:textOn="七年级"
                       android:text="七年级"
                       android:checked="false"
-            />
+                      android:layout_marginLeft="10dp"
+                      android:layout_weight="1"
+                      android:height="45dp"
+                      android:layout_marginTop="1dp"/>
         <ToggleButton android:id="@+id/toggle8"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -201,7 +241,10 @@
                       android:textOn="八年级"
                       android:text="八年级"
                       android:checked="false"
-            />
+                      android:layout_marginLeft="10dp"
+                      android:layout_weight="1"
+                      android:height="45dp"
+                      android:layout_marginTop="1dp"/>
         <ToggleButton android:id="@+id/toggle9"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -210,14 +253,17 @@
                       android:textOn="九年级"
                       android:text="九年级"
                       android:checked="false"
-            />
+                      android:layout_marginLeft="10dp"
+                      android:layout_weight="1"
+                      android:height="45dp"
+                      android:layout_marginTop="1dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <View android:layout_height="1px" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
+        <View android:layout_height="1dp" android:background="@color/bg_gray_dark" android:layout_width="fill_parent"></View>
     </LinearLayout>
 
     <LinearLayout
@@ -243,16 +289,20 @@
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:minHeight="45dp">
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="#7f8c8d"
             android:textColor="@color/txt_white"
             android:textSize="12sp"
-            android:text="@string/signup" />
+            android:text="@string/signup"
+            android:singleLine="false"
+            android:height="45dp"
+            android:width="320dp"/>
     </LinearLayout>
 </LinearLayout>

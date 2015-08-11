@@ -25,14 +25,13 @@ public class LoginActivity extends FragmentActivity implements
     private SignFragmentController controller;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Config.cacheToken(this, "111");
         super.onCreate(savedInstanceState);
         MyApplication.getInstance().addActivity(this);
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         controller = SignFragmentController.getInstance(this, R.id.fl_sign);
-        controller.showFragment(0);
+        controller.showFragment(1);
 
         initView();
     }
