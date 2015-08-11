@@ -10,6 +10,7 @@ public class Config {
 
     public static final String KEY_TOKEN = "token";
     public static final String KEY_CODE = "code";
+    public static final String KEY_PHONE = "phone";
     public static final String APP_ID = "com.niuti.fuyuan.headwords";
     public static final String CHARSET = "utf-8";
     public static final String HOME_URL = "http://121.40.201.41:5000/android/learnings/new_learning";
@@ -35,6 +36,16 @@ public class Config {
     public static void cacheCode(Context context, String code) {
         Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
         e.putString(KEY_CODE, code);
+        e.commit();
+    }
+
+    public static String getCachedPhone(Context context) {
+        return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).getString(KEY_PHONE, null);
+    }
+
+    public static void cachePhone(Context context, String phone) {
+        Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_PHONE, phone);
         e.commit();
     }
 }

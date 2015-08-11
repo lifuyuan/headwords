@@ -170,6 +170,7 @@ public class SignupFragment extends SignBaseFragment {
 					public void onSuccess(String code) {
 						pd1.dismiss();
 						Config.cacheCode(activity, code);
+						Config.cachePhone(activity, username.getText().toString());
 					}
 				}, new Getcode.FailCallback() {
 					@Override
@@ -196,6 +197,11 @@ public class SignupFragment extends SignBaseFragment {
 
 				if (TextUtils.isEmpty(username.getText())) {
 					ToastUtils.showToast(activity, "手机号不能为空", Toast.LENGTH_SHORT);
+					return;
+				}
+
+				if (!username.getText().toString().equals(Config.getCachedPhone(activity))) {
+					ToastUtils.showToast(activity, "手机号与您接收验证码的手机不一致", Toast.LENGTH_SHORT);
 					return;
 				}
 
@@ -230,7 +236,8 @@ public class SignupFragment extends SignBaseFragment {
 						pd.dismiss();
 
 						Config.cacheToken(activity, token);
-
+                        Config.cachePhone(activity, null);
+						Config.cacheCode(activity, null);
 						intent2Activity(MainActivity.class);
 						activity.finish();
 					}

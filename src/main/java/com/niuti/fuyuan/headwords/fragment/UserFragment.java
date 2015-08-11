@@ -71,7 +71,7 @@ public class UserFragment extends BaseFragment {
 				Logger.show(TAG, "-MyWebViewClient->shouldOverrideUrlLoading()--");
 				Logger.show(TAG, "-MyWebViewClient->shouldOverrideUrlLoading()--" + url);
                 if(url.endsWith("/android/quit")) {
-					Config.cacheToken(activity, "");
+					Config.cacheToken(activity, null);
 					ToastUtils.showToast(activity, "注销成功", Toast.LENGTH_SHORT);
 					MyApplication.getInstance().exit();
 				}
