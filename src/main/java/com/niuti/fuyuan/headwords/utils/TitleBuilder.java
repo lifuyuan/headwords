@@ -16,15 +16,18 @@ public class TitleBuilder {
 
     private View viewTitle;
     private TextView tvTitle;
+    private ImageView ivRight;
 
     public TitleBuilder(Activity context) {
         viewTitle = context.findViewById(R.id.rl_titlebar);
         tvTitle = (TextView) viewTitle.findViewById(R.id.titlebar_tv);
+        ivRight = (ImageView) viewTitle.findViewById(R.id.titlebar_iv_right);
     }
 
     public TitleBuilder(View context) {
         viewTitle = context.findViewById(R.id.rl_titlebar);
         tvTitle = (TextView) viewTitle.findViewById(R.id.titlebar_tv);
+        ivRight = (ImageView) viewTitle.findViewById(R.id.titlebar_iv_right);
     }
 
     // title
@@ -38,6 +41,19 @@ public class TitleBuilder {
         tvTitle.setVisibility(TextUtils.isEmpty(text) ? View.GONE
                 : View.VISIBLE);
         tvTitle.setText(text);
+        return this;
+    }
+
+    public TitleBuilder setRightImage(int resId) {
+        ivRight.setVisibility(resId > 0 ? View.VISIBLE : View.GONE);
+        ivRight.setImageResource(resId);
+        return this;
+    }
+
+    public TitleBuilder setRightOnClickListener(OnClickListener listener) {
+        if (ivRight.getVisibility() == View.VISIBLE) {
+            ivRight.setOnClickListener(listener);
+        }
         return this;
     }
 

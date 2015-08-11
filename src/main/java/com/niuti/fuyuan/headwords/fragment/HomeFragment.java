@@ -22,13 +22,23 @@ public class HomeFragment extends BaseFragment {
 	protected String TAG;
 	private View view;
 	private WebView webView;
+	private FragmentController controller;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_home, null);
 		view.setBackgroundColor(Color.parseColor("#404040"));
-		new TitleBuilder(view).setTitleText("首字母");
+		new TitleBuilder(view)
+			.setTitleText("初中英语")
+			.setRightImage(R.mipmap.dot)
+			.setRightOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					controller = FragmentController.getInstance(activity, R.id.fl_content);
+					controller.showFragment(2);
+				}
+			});
 		webView = (WebView)view.findViewById(R.id.webView);
 		webView.loadUrl(Config.HOME_URL+"?token="+Config.getCachedToken(activity));
 		final ProgressDialog prDialog = ProgressDialog.show(activity, null, "loading, please wait...");

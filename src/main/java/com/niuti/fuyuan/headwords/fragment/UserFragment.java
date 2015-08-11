@@ -25,12 +25,21 @@ public class UserFragment extends BaseFragment {
 	private WebView webView;
 	protected String TAG;
 	private View view;
+	private FragmentController controller;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = View.inflate(activity, R.layout.frag_user, null);
-		new TitleBuilder(view).setTitleText("设置");
+		new TitleBuilder(view).setTitleText("初中英语")
+			.setRightImage(R.mipmap.dot)
+			.setRightOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					controller = FragmentController.getInstance(activity, R.id.fl_content);
+					controller.showFragment(2);
+				}
+			});
 		//view.findViewById(R.id.btnLogout).setOnClickListener(new View.OnClickListener() {
 		//	@Override
 		//	public void onClick(View v) {

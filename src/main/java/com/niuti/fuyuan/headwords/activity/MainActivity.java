@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
@@ -17,6 +18,7 @@ public class MainActivity extends FragmentActivity implements
         OnCheckedChangeListener {
     protected String TAG;
     private RadioGroup rg_tab;
+    private RadioButton rb_home;
     //private ImageView iv_add;
     private FragmentController controller;
 
@@ -44,6 +46,8 @@ public class MainActivity extends FragmentActivity implements
         switch (checkedId) {
             case R.id.rb_home:
                 controller.showFragment(0);
+                rb_home = (RadioButton)group.findViewById(R.id.rb_home);
+                rb_home.setChecked(false);
                 break;
             case R.id.rb_meassage:
                 controller.showFragment(1);
