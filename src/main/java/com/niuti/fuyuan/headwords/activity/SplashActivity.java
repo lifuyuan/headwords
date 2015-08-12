@@ -1,5 +1,7 @@
 package com.niuti.fuyuan.headwords.activity;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,7 +11,9 @@ import com.niuti.fuyuan.headwords.BaseActivity;
 import com.niuti.fuyuan.headwords.Config;
 import com.niuti.fuyuan.headwords.R;
 import com.niuti.fuyuan.headwords.application.MyApplication;
+import com.niuti.fuyuan.headwords.net.GetVersion;
 import com.niuti.fuyuan.headwords.net.TokenVerify;
+import com.niuti.fuyuan.headwords.utils.Logger;
 import com.niuti.fuyuan.headwords.utils.ToastUtils;
 
 /**
@@ -19,6 +23,8 @@ public class SplashActivity extends BaseActivity {
     private static final int WHAT_INTENT2LOGIN = 1;
     private static final int WHAT_INTENT2MAIN = 2;
     private static final long SPLASH_DUR_TIME = 3000;
+    private String local_version ;
+    private String server_version = "1.0";
 
     private Handler handler = new Handler() {
 
@@ -47,7 +53,27 @@ public class SplashActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         MyApplication.getInstance().addActivity(this);
         setContentView(R.layout.activity_splash);
-
+        new GetVersion(new GetVersion.SuccessCallback() {
+            @Override
+            public void onSuccess(String version) {
+                server_version = version;
+                Logger.show(TAG, "server_version_1:" + server_version);
+            }
+        }, new GetVersion.FailCallback() {
+            @Override
+            public void onFail() {
+                server_version = "1.0";
+            }
+        });
+        Logger.show(TAG, "server_version_2:" + server_version);
+        try {
+            local_version = getVersionName();
+            Logger.show(TAG, "local_version_1:" + local_version);
+        } catch (Exception e) {
+            e.printStackTrace();
+            local_version = server_version;
+        }
+        Logger.show(TAG, "local_version_2:" + local_version);
         String token = Config.getCachedToken(this);
         if(token!=null && !token.equals("")) {
             new TokenVerify(token, new TokenVerify.SuccessCallback() {
@@ -65,5 +91,11 @@ public class SplashActivity extends BaseActivity {
         } else {
             handler.sendEmptyMessageDelayed(WHAT_INTENT2LOGIN, SPLASH_DUR_TIME);
         }
+    }
+
+    private String getVersionName() throws Exception{
+        PackageManager packageManager = getPackageManager();
+        PackageInfo packInfo = packageManager.getPackageInfo(getPackageName(), 0);
+        return packInfo.versionName;
     }
 }
