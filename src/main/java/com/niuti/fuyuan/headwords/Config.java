@@ -21,6 +21,7 @@ public class Config {
     public static final String GETCODE_URL = "http://121.40.201.41:5000/api/users/code.json";
     public static final String TOKEN_URL = "http://121.40.201.41:5000/api/users/tokenverify.json";
     public static final String VERSION_URL = "http://121.40.201.41:5000/api/get_version.json";
+    public static final String APK_URL = "http://121.40.201.41:5000/app-release.apk";
     public static String getCachedToken(Context context) {
         return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).getString(KEY_TOKEN, null);
     }
