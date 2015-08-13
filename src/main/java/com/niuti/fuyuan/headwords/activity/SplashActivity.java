@@ -115,12 +115,12 @@ public class SplashActivity extends BaseActivity {
                             server_version = version;
                             Logger.show(TAG, "server_version_1:" + server_version);
 
-                            if(server_version.equals(local_version)){
-                                Logger.show(TAG, "SplashActivity.CheckVersionTask版本一致，显示主页面");
-                                loadMain();
-                            }else{
+                            if(Float.valueOf(server_version)-Float.valueOf(local_version)>0.0001){
                                 Logger.show(TAG, "SplashActivity.CheckVersionTask版本不致，显示升级提示窗口");
                                 handler.sendEmptyMessageDelayed(SHOW_UPDATE_DIALOG, 0);
+                            }else{
+                                Logger.show(TAG, "SplashActivity.CheckVersionTask版本一致，显示主页面");
+                                loadMain();
                             }
                         }
                     }, new GetVersion.FailCallback() {
@@ -207,7 +207,9 @@ public class SplashActivity extends BaseActivity {
                         @Override
                         public void onLoading(long count, long current) {
                             super.onLoading(count, current);
-                            pd.setMessage("正在下载更新");
+                            int progress = (int) (current*100/count);
+                            pd.setMessage("正在下载更新..."+progress+"%");
+                            pd.setProgress(progress);
                             pd.show();
                             //int progress = (int) (current*100/count);
                             //tv_splash_state.setText("downloading... "+ progress+"%");
